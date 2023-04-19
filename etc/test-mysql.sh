@@ -5,9 +5,9 @@
 # if anything is specified, use root
 
 if [ $# -eq 0 ]; then
-    USER="milestones"
-    PASSWORD="milestones"
-    DATABASE="milestones"
+    USER="pizza"
+    PASSWORD="pizza"
+    DATABASE="pizza"
 else 
     USER="root"
     PASSWORD="password"
