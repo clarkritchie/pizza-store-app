@@ -4,6 +4,7 @@ WORKDIR /app
 
 RUN apt-get update
 RUN apt -y install default-mysql-client iputils-ping lsof
+RUN apt-get -y install alembic
 
 COPY requirements.txt ./
 COPY . .
