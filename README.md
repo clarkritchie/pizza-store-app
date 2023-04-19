@@ -38,3 +38,7 @@ b5f58fbbca09   mariadb:latest           "docker-entrypoint.s…"   4 minutes ago
 ❯ mysql -upizza -ppizza -h127.0.0.1 pizza
 ❯ mysql -uroot --ppassword -h127.0.0.1
 ```
+
+## Notes
+
+- `prestart.sh` is to allow the Maria DB container to become ready before the application starts.  See also [this link](https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker#pre_start_path).
