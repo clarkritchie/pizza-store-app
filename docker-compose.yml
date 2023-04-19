@@ -1,0 +1,35 @@
+version: '3'
+services:
+  pizza_db:
+    container_name: pizza_db
+    image: mariadb:latest
+    environment:
+      # server settings
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_LOG_CONSOLE: true
+      # bootstrap a db and db user
+      MYSQL_DATABASE: pizza
+      MYSQL_USER: pizza
+      MYSQL_PASSWORD: pizza
+    expose:
+      - 3306
+    ports:
+      - 3306:3306
+  server:
+    build:
+      context: .
+    container_name: pizza_app
+    environment:
+      # connection settings for the app, these should match server's config (above)
+      MYSQL_DATABASE: pizza
+      MYSQL_USER: pizza
+      MYSQL_PASSWORD: pizza
+      MYSQL_HOSTNAME: pizza_db.pizza_app_default # this is basically container name (above)
+      MYSQL_PORT: 3306
+    ports:
+      # - '8000:8000'
+      - '80:80'
+    depends_on:
+      - pizza_db
+    restart: 'no'
