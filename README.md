@@ -4,6 +4,8 @@ This is just a simple no-op demo app that:
 - Starts 2 containers -- one container a Fast API app (see `./app`), the other for Maria DB
 - Allows the app container to talk to the database container
 
+See also [uvicorn-gunicorn-fastapi-docker](https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker) for more doco.
+
 ## Usage
 
 - `./run.sh` to start
