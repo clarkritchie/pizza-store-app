@@ -25,7 +25,7 @@ services:
       MYSQL_DATABASE: pizza
       MYSQL_USER: pizza
       MYSQL_PASSWORD: pizza
-      MYSQL_HOSTNAME: pizza_db.pizza_app_default # this is basically container name (above)
+      MYSQL_HOSTNAME: pizza_db # this is basically container name (above)
       MYSQL_PORT: 3306
     ports:
       # - '8000:8000'
